@@ -1,0 +1,8 @@
+[package]
+name = "putumayo-utils"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+kdl = "4.6.0"
+easy_color = "0.1.3"

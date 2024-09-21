@@ -1,0 +1,304 @@
+palette {
+	// ----------------------------------------------------------------------------
+	// Foreground primary palette (3-bit and 4-bit compatible).
+	swatch {
+		midnight "Amethyst" value="#c689e6"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Terminal magenta. Hint texts and markers." \
+			code="All keywords like <code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>import</code>, <code>export</code>, <code>return</code>, <code>try</code>, <code>catch</code>, <code>or</code>, <code>and</code>, <code>in</code>, <code>of</code>, <code>from</code>, etc., except procedure-related and storage-related ones (see denim/unknown swatch)."
+	}
+	swatch {
+		midnight "Cherry" value="#e67d7d"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Terminal red. Error texts and markers. Select/visual mode indicators in modal editors. Diff deletion indicators." \
+			code="Markdown bold texts."
+	}
+	swatch {
+		midnight "Amber" value="#d9d282"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Terminal yellow. Warning texts and markers. Diff modification indicators." \
+			code="Builtin varable and function identifiers. Markdown headings."
+	}
+	swatch {
+		midnight "Paramo" value="#aecc8f"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Terminal green." \
+			code="In general, used for precedure identifiers like function, method, constructor, and macro names, except builtin ones (see amber swatch)."
+	}
+	swatch {
+		midnight "Lichen" value="#8fccb8"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Terminal cyan." \
+			code="In general, used for variable identifiers like standard variable, function parameter, and user-defined constant names, except builtin ones (see amber swatch)."
+	}
+	swatch {
+		midnight "Denim" value="#99a9ff"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Terminal blue. Info texts and markers. Info indicators. Diff moved indicators." \
+			code="All procedure-related and storage-related keywords like <code>var</code>, <code>let</code>, <code>const</code>, <code>mut</code>, <code>ref</code>, <code>def</code>, <code>class</code>, <code>function</code>, etc."
+	}
+	swatch {
+		midnight "Nightfog" value="#3d5866"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Terminal black. Line numbers. Inactive text. Window/panel separators. Prominent hidden text." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Beige" value="#f2d2c2"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Terminal white." \
+			code="Highlights."
+	}
+
+	// ----------------------------------------------------------------------------
+	// Alternative accent colors.
+	swatch {
+		midnight "Fuchia" value="#d977b7"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="No usage." \
+			code="Logical, mathematical, and other operators. Special symbols like <code>?</code> in Rust, <code>...</code> in Hare. Markdown list dashes."
+	}
+	swatch {
+		midnight "Orange" value="#d9916d"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="No usage." \
+			code="Character, numeric, and special constant literals like <code>true</code>, <code>false</code>, <code>none</code>, etc. Other special constants like escape codes. Markdown italic text."
+	}
+	swatch {
+		midnight "Forest" value="#85cc85"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Insert mode indicators in modal editors. Diff addition indicators." \
+			code="HTML/XML tag names (note that JSX tag names might be styled using constructor assigned swatches)."
+	}
+	swatch {
+		midnight "Teal" value="#70bccc"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="No usage." \
+			code="Type identifiers including user-defined and builtin. Markdown quotes."
+	}
+
+	// ----------------------------------------------------------------------------
+	// Alternative neutral colors.
+	swatch {
+		midnight "Khaki" value="#ccb1a3"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Normal mode indicators in modal editors. Primary cursor background." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Mist" value="#95a69e"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Default text. Current (highlighted) line numbers text." \
+			code="Default text."
+	}
+	swatch {
+		midnight "Arequipe" value="#b39b6b"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="No usage." \
+			code="String literals. Regular expression literals. URLs. Markdown links."
+	}
+	swatch {
+		midnight "Olive" value="#b3b36b"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="No usage." \
+			code="HTML/XML tag attributes. Class attributes (note that JSX tag attributes might be styled using method assigned swatches). Markdown inline code block."
+	}
+	swatch {
+		midnight "Tan" value="#99857a"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Auxiliar UI text and decorations." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Terracota" value="#996b6b"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Secondary cursor background." \
+			code="Commas, colons and other punctuation delimiters depending on the language."
+	}
+	swatch {
+		midnight "Umber" value="#806f4c"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="No usage." \
+			code="Any punctuation symbol including brackets like parentheses, angle brackets, etc. but except punctuation delimiters (see terracota swatch) and special punctuation (see slate swatch)."
+	}
+	swatch {
+		midnight "Slate" value="#518c83"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Inlay hints." \
+			code="Special punctuation like string interpolation brackets, etc. Markdown strikethrough text."
+	}
+	swatch {
+		midnight "Steel" value="#517373"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Interactive text (virtual text)." \
+			code="Comments including doc comments as well."
+	}
+
+	// ----------------------------------------------------------------------------
+	// Neutral backgrounds.
+	swatch {
+		midnight "Bg00" value="#131d1f"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Pane borders. Status line background. Primary cursor text." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Bg05" value="#172226"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="No usage." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Bg10" value="#1c282e"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Main background." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Bg15" value="#212d36"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Secondary special line and column indicators like cursorline, columnline, and virtual rulers, except primary ones (see bg20 swatch)." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Bg20" value="#25313d"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Primary special line and column indicators like cursorline, columnline except secondary ones (see bg15 swatch)." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Bg25" value="#2a3545"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="Popups and dialog boxes background." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Bg30" value="#2f394d"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="No usage." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Bg35" value="#363e54"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="All selected text backgrounds including primary and secondary." \
+			code="No usage."
+	}
+	swatch {
+		midnight "Bg40" value="#3c415c"
+		sunlight "Unknown" value="#888888"
+		type "F/L"
+		info \
+			ui="No usage." \
+			code="Special characters like whitespace, indent, and end of line markers."
+	}
+	swatch {
+		midnight "Bg45" value="#414463"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Highlighted lines background when selected by the user. Scroll bar background." \
+			code="No usage."
+	}
+
+	// ----------------------------------------------------------------------------
+	// Colored backgrounds.
+	swatch {
+		midnight "YellowBg" value="#403f37"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Background for text notifying warnings to the user." \
+			code="No usage."
+	}
+	swatch {
+		midnight "RedBg" value="#453434"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Background for text notifying errors to the user." \
+			code="No usage."
+	}
+	swatch {
+		midnight "BlueBg" value="#334455"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Background for text notifying neutral info to the user." \
+			code="No usage."
+	}
+	swatch {
+		midnight "MagentaBg" value="#473947"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Background for text notifying hints to the user." \
+			code="No usage."
+	}
+	swatch {
+		midnight "GreenBg" value="#3c4841"
+		sunlight "Unknown" value="#888888"
+		type "O/S"
+		info \
+			ui="Background for text notifying success status to the user." \
+			code="No usage."
+	}
+}

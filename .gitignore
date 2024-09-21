@@ -1,0 +1,11 @@
+# Project structure
+/target
+
+# Editor directories and files
+.helix
+.idea
+.vscode
+*.vim
+
+# Mac OS
+.DS_Store
