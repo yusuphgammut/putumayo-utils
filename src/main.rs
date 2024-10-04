@@ -3,6 +3,7 @@ use kdl::{KdlDocument, KdlNode, KdlValue, NodeKey};
 use std::{
     fs::{self, File},
     io::Write,
+    path::Path,
 };
 
 const NAME_ARG: usize = 0;
@@ -11,21 +12,21 @@ const TYPE_ARG: usize = 0;
 const UI_PROP: &str = "ui";
 const CODE_PROP: &str = "code";
 
-fn read_kdl_file() -> KdlDocument {
-    fs::read_to_string("data.kdl")
-        .expect("Error reading the file.")
+fn read_kdl_file(file_path: impl AsRef<Path>) -> KdlDocument {
+    fs::read_to_string(file_path)
+        .expect("Error reading the source file")
         .parse()
-        .expect("Problem parsing the file.")
+        .expect("Error parsing the source file")
 }
 
 fn get_swatch_child<'a>(child_name: &str, swatch: &'a KdlNode, i: usize) -> &'a KdlNode {
     swatch
         .children()
-        .unwrap_or_else(|| panic!("Problem finding the children of swatch #{}", i))
+        .unwrap_or_else(|| panic!("Error finding the children of swatch #{}", i))
         .get(child_name)
         .unwrap_or_else(|| {
             panic!(
-                "Problem finding the child ({}) of the swatch #{}",
+                "Error finding the child ({}) of the swatch #{}",
                 child_name, i
             )
         })
@@ -40,7 +41,7 @@ fn get_swatch_child_value<'a>(
         .get(value.clone())
         .unwrap_or_else(|| {
             panic!(
-                "Problem finding the value {:?} in the node ({}) of the swatch #{}",
+                "Error finding the value {:?} in the node ({}) of the swatch #{}",
                 value,
                 swatch_child.name(),
                 i
@@ -49,20 +50,36 @@ fn get_swatch_child_value<'a>(
         .value()
 }
 
-fn main() {
+fn generate_html_table() {
+    let mut kdl_file_path = std::env::args().nth(2).unwrap_or_default();
+    let mut html_file_path = std::env::args().nth(3).unwrap_or_default();
+
+    if kdl_file_path == String::default() && html_file_path == String::default() {
+        kdl_file_path = String::from("data.kdl");
+        html_file_path = String::from("html_result.html");
+
+        println!("No custom file paths provided. Using default values:");
+        println!("Source file: {}", kdl_file_path);
+        println!("Target file: {}", html_file_path);
+    } else if kdl_file_path == String::default() || html_file_path == String::default() {
+        println!("Only a single file path was provided. Please make sure to provide both source and target file pahts");
+        println!("or none of them if you want to use the default paths. For more info run the `help` subcommand.",
+        );
+    }
+
     let theme_name_arg: NodeKey = NAME_ARG.into();
     let theme_value_prop: NodeKey = VALUE_PROP.into();
     let theme_type_arg: NodeKey = TYPE_ARG.into();
     let theme_ui_prop: NodeKey = UI_PROP.into();
     let theme_code_prop: NodeKey = CODE_PROP.into();
-    let kdl_file: KdlDocument = read_kdl_file();
+    let kdl_file: KdlDocument = read_kdl_file(kdl_file_path);
     let mut html_string: String = String::new();
 
     let swatches = kdl_file
         .get("palette")
-        .expect("Error finding the node (palette).")
+        .expect("Error finding the node (palette)")
         .children()
-        .expect("Error finding the nodes (swatch).")
+        .expect("Error finding the nodes (swatch)")
         .nodes();
 
     html_string.push_str(
@@ -151,6 +168,22 @@ fn main() {
 </table>"#,
     );
 
-    let mut buffer = File::create("html_result.txt").unwrap();
-    buffer.write_all(html_string.as_bytes()).unwrap();
+    let mut buffer = File::create(html_file_path).expect("Error creating the target file");
+    buffer
+        .write_all(html_string.as_bytes())
+        .expect("Error writing the target file");
+}
+
+fn display_help_info() {
+    println!("TO DO: Display helpt info here...");
+}
+
+fn main() {
+    let subcommand = std::env::args().nth(1).expect("No subcommand provided");
+
+    match subcommand.as_str() {
+        "help" => display_help_info(),
+        "generate" => generate_html_table(),
+        _ => (),
+    }
 }
